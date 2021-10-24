@@ -21,8 +21,4 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BranchManagement.Domain\BranchManagement.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

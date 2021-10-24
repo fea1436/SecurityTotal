@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BranchManagement.Application.Contract\BranchManagement.Application.Contract.csproj" />
-    <ProjectReference Include="..\_00_Framework\_00_Framework.csproj" />
   </ItemGroup>
 
 </Project>

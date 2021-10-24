@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FraudManagement.Application.Contract\FraudManagement.Application.Contract.csproj" />
-    <ProjectReference Include="..\FraudManagement.Domain\FraudManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

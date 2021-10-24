@@ -4,8 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\_00_Framework\_00_Framework.csproj" />
-  </ItemGroup>
-
 </Project>
