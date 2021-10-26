@@ -9,6 +9,7 @@ namespace BranchManagement.Application.Contract.Branch
         OperationResult Edit(EditBranch command);
         OperationResult Activate(long id);
         OperationResult Deactivate(long id);
+        EditBranch GetDetails(long id);
         List<BranchViewModel> Search(BranchSearchModel searchModel);
     }
 }

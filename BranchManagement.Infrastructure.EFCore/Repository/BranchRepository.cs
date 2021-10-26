@@ -9,7 +9,7 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
     {
         private readonly BranchContext _context;
 
-        public BranchRepository(BranchContext context)
+        public BranchRepository(BranchContext context) : base(context)
         {
             _context = context;
         }
