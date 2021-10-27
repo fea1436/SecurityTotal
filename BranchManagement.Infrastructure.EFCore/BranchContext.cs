@@ -6,7 +6,7 @@ namespace BranchManagement.Infrastructure.EFCore
 {
     public class BranchContext : DbContext
     {
-        private DbSet<Branch> Branches { get; set; }
+        public DbSet<Branch> Branches { get; set; }
 
         public BranchContext(DbContextOptions<BranchContext> options) : base(options)
         {

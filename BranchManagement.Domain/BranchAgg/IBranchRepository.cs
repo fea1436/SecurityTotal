@@ -6,6 +6,7 @@ namespace BranchManagement.Domain.BranchAgg
 {
     public interface IBranchRepository : IRepository<long, Branch>
     {
+        EditBranch GetDetails(long id);
         List<BranchViewModel> Search(BranchSearchModel searchModel);
     }
 }

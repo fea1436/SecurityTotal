@@ -9,8 +9,7 @@
         public string AuthorizationCode { get; set; }
         public string AuthorizationDate { get; set; }
         public string FullTelNumber { get; set; }
-        public string Fax { get; set; }
-        public long PostalCode { get; set; }
         public string Address { get; set; }
+        public bool ActivationStatus { get; set; }
     }
 }
