@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BranchManagement.Configurat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BranchManagement.Infrastructure.EFCore", "BranchManagement.Infrastructure.EFCore\BranchManagement.Infrastructure.EFCore.csproj", "{C6435B01-D0D2-4708-A15C-2917E67DD530}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

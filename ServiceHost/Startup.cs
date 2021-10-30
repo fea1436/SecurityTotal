@@ -1,3 +1,6 @@
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using _01_Framework.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +25,10 @@ namespace ServiceHost
             services.AddHttpContextAccessor();
 
             BranchManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
+
+            services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+            services.AddTransient<IFileUploader, FileUploader>();
+            services.AddTransient<IAuthHelper, AuthHelper>();
 
             services.AddRazorPages();
         }
@@ -50,6 +57,7 @@ namespace ServiceHost
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
