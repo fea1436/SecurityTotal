@@ -19,12 +19,12 @@ namespace BranchManagement.Application
             var operation = new OperationResult();
             if (_branchRepository.Exists(x => x.Title == command.Title) ||
                 _branchRepository.Exists(x => x.Code == command.Code) ||
+                _branchRepository.Exists(x=>x.OldCode == command.OldCode) ||
                 _branchRepository.Exists(x => x.PostalCode == command.PostalCode))
                 return operation.Failed(ApplicationMessages.Duplicated);
 
             var branch = new Branch(command.Title, command.HeadQ, command.Code, command.OldCode,
-                command.AuthorizationCode, command.AuthorizationDate, command.TelPreCode, command.Telephone,
-                command.Fax,
+                command.AuthorizationCode, command.AuthorizationDate, command.TelPreCode, command.Telephone, command.Fax,
                 command.PostalCode, command.Address, command.Keywords, command.MetaDescription, command.Slug);
 
             _branchRepository.Create(branch);
