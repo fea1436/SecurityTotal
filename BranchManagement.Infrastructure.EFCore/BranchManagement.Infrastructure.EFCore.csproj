@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Migrations\20211030080356_Branches_Creation.cs" />
+    <Compile Include="Migrations\20211030080356_Branches_Creation.Designer.cs" />
+    <Compile Include="Migrations\BranchContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
       <PrivateAssets>all</PrivateAssets>

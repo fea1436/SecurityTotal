@@ -2,6 +2,7 @@
 using BranchManagement.Application.Contract.Branch;
 using BranchManagement.Domain.BranchAgg;
 using BranchManagement.Infrastructure.EFCore;
+using BranchManagement.Infrastructure.EFCore.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,7 +13,7 @@ namespace BranchManagement.Configuration
         public static void Configure(IServiceCollection services, string connectionString)
         {
             services.AddTransient<IBranchApplication, BranchApplication>();
-            services.AddTransient<IBranchRepository, IBranchRepository>();
+            services.AddTransient<IBranchRepository, BranchRepository>();
 
             services.AddDbContext<BranchContext>(x => x.UseSqlServer(connectionString));
         }
