@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using BranchManagement.Application.Contract.Branch;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -20,7 +21,31 @@ namespace ServiceHost.Areas.Portal.Pages
 
         public void OnGet(BranchSearchModel searchModel)
         {
-            BHeadQs = new SelectList(_branchApplication.get _productApplication.GetProducts(), "Id", "Name");
+            BHeadQs = new SelectList(_branchApplication.GetAllHeadQ(), "Code", "Title");
+            Branches = _branchApplication.Search(searchModel);
+        }
+
+        public IActionResult OnGetCreate()
+        {
+            return Partial("./Create", new CreateBranch());
+        }
+
+        public JsonResult OnPostCreate(CreateBranch command)
+        {
+            var result = _branchApplication.Add(command);
+            return new JsonResult(result);
+        }
+
+        public IActionResult OnGetEdit(long id)
+        {
+            var articleCategory = _branchApplication.GetDetails(id);
+            return Partial("Edit", articleCategory);
+        }
+
+        public JsonResult OnPostEdit(EditBranch command)
+        {
+            var result = _branchApplication.Edit(command);
+            return new JsonResult(result);
         }
     }
 }

@@ -89,6 +89,11 @@ namespace BranchManagement.Application
             return _branchRepository.GetDetails(id);
         }
 
+        public List<BranchViewModel> GetAllHeadQ()
+        {
+            return _branchRepository.GetAllHeadQ();
+        }
+
         public List<BranchViewModel> Search(BranchSearchModel searchModel)
         {
             return _branchRepository.Search(searchModel);

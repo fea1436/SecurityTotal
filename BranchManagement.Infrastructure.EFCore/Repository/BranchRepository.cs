@@ -41,6 +41,15 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
+        public List<BranchViewModel> GetAllHeadQ()
+        {
+            return _branchContext.Branches.Where(x => x.HeadQ == 0).Select(x => new BranchViewModel
+            {
+                Code = x.Code,
+                Title = x.Title
+            }).OrderBy(x=>x.Title).ToList();
+        }
+
         public List<BranchViewModel> Search(BranchSearchModel searchModel)
         {
             var headQ = _branchContext.Branches.Select(x=> new { x.Code, x.Title }).ToList();
