@@ -2,6 +2,7 @@
 {
     public class BranchViewModel
     {
+        public long Id { get; set; }
         public string Title { get; set; }
         public string HeadQ { get; set; }
         public int Code { get; set; }

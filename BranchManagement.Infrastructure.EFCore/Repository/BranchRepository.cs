@@ -56,12 +56,14 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
 
             var query = _branchContext.Branches.Select(x => new BranchViewModel
             {
+                Id = x.Id,
                 Code = x.Code,
                 Title = x.Title,
                 OldCode = x.OldCode,
                 AuthorizationCode = x.AuthorizationCode,
                 AuthorizationDate = x.AuthorizationDate.ToFarsi(),
                 Address = x.Address,
+                ActivationStatus = x.ActivationStatus,
                 FullTelNumber = x.TelPreCode + x.Telephone
             });
 
@@ -74,17 +76,17 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
                 query = query.Where(x => x.Title.Contains(searchModel.Title));
 
-            if (!searchModel.ActivationStatus)
+            if (searchModel.ActivationStatus)
                 query = query.Where(x => !x.ActivationStatus);
 
-            var branches = query.OrderByDescending(x=>x.Code).ToList();
+            var branches = query.OrderBy(x => x.Code).ToList();
 
             foreach (var branch in branches)
             {
-                branch.HeadQ = headQ.FirstOrDefault(x => x.Title.Contains(searchModel.HeadQ))?.Title;
+                branch.HeadQ = headQ.FirstOrDefault(x => x.Code == branch.Code)?.Title;
             }
 
-            return query.ToList();
+            return branches;
         }
     }
 }

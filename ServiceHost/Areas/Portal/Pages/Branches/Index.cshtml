@@ -23,16 +23,28 @@
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.ProductId"></label>
-                        <select class="form-control" asp-for="SearchModel.ProductId" asp-items="Model.Products">
-                            <option value="0">انتخاب محصول ...</option>
+                        <label class="sr-only" asp-for="SearchModel.HeadQ"></label>
+                        <select class="form-control" asp-for="SearchModel.HeadQ" asp-items="Model.BHeadQs">
+                            <option value="0">انتخاب مدیریت ...</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.Title"></label>
+                        <input class="form-control" asp-for="SearchModel.Title" placeholder="عنوان شعبه" />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.Code"></label>
+                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد مهرگستر" />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.OldCode"></label>
+                        <input class="form-control" asp-for="SearchModel.OldCode" placeholder="کد سنتی" />
                     </div>
                     <div class="form-group m-r-10">
                         <div class="checkbox checkbox-primary">
-                            <input asp-for="SearchModel.IsInStock"/>
-                            <label asp-for="SearchModel.IsInStock">
-                                جستجو در کالاهای ناموجود
+                            <input asp-for="SearchModel.ActivationStatus" />
+                            <label asp-for="SearchModel.ActivationStatus">
+                                جستجو در شعب غیرفعال
                             </label>
                         </div>
                     </div>
@@ -44,11 +56,11 @@
     </div>
 </div>
 
-<div class="row" id="ProductsDiv">
+<div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست انبار (@Model.Inventory.Count)</h3>
+                <h3 class="panel-title">لیست شعب (@Model.Branches.Count)</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -57,32 +69,43 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>محصول</th>
-                                    <th>قیمت</th>
-                                    <th>موجودی انبار</th>
-                                    <th>تاریخ ایجاد</th>
-                                    <th>عملیات</th>
+                                    <th>مدیریت</th>
+                                    <th>کدمهرگستر</th>
+                                    <th>کدسنتی</th>
+                                    <th>شناسۀ مجوز</th>
+                                    <th>تاریخ مجوز</th>
+                                    <th>شمارۀ تلفن</th>
+                                    <th>آدرس</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.Inventory)
+                                @foreach (var item in Model.Branches)
                                 {<tr>
                                      <td>@item.Id</td>
-                                     <td>@item.Product</td>
-                                     <td>@item.UnitPrice</td>
-                                     <td>@item.CurrentCount</td>
-                                     <td>@item.CreationDateFa</td>
+                                     <td>@item.HeadQ</td>
+                                     <td>@item.Code</td>
+                                     <td>@item.OldCode</td>
+                                     <td>@item.AuthorizationCode</td>
+                                     <td>@item.AuthorizationDate</td>
+                                     <td>@item.FullTelNumber</td>
+                                     <td>@item.Address</td>
                                      <td>
 
                                          <a class="btn btn-warning  waves-effect waves-light m-b-5"
                                             href="#showmodal=@Url.Page("./Index", "Edit", new {id = @item.Id})">
                                              <i class="fa fa-edit"></i>  ویرایش
                                          </a>
-
-                                         @*<a class="btn btn-info waves-effect waves-light m-b-5"
-                                            href="#showmodal=@Url.Page("./Index", "Log", new {id = @item.Id})" onclick="$('.modal-dialog').css('width', '60%')">
-                                             <i class="fa fa-recycle"></i>  گردش
-                                         </a>*@
+                                         
+                                         @if (item.ActivationStatus)
+                                         {
+                                             <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id"
+                                                class="btn btn-danger waves-effect waves-light m-b-5">غیرفعال‌سازی</a>
+                                         }
+                                         else
+                                         {
+                                             <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id"
+                                                class="btn btn-success waves-effect waves-light m-b-5">فعال‌سازی</a>
+                                         }
 
                                      </td>
                                  </tr>
