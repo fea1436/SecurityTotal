@@ -17,11 +17,12 @@ namespace BranchManagement.Domain.BranchAgg
         public long PostalCode { get; private set; }
         public bool ActivationStatus { get; private set; }
         public string Address { get; private set; }
+        public bool OwnershipStatus { get; private set; }
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
 
-        public Branch(string title, int headQ, int code, int oldCode, string authorizationCode, DateTime authorizationDate, 
+        public Branch(string title, int headQ, int code, int oldCode, string authorizationCode, DateTime authorizationDate, bool ownershipStatus,
             string telPreCode, string telephone, string fax, long postalCode, string address, string keywords, string metaDescription, string slug)
         {
             Title = title;
@@ -39,9 +40,10 @@ namespace BranchManagement.Domain.BranchAgg
             Keywords = keywords;
             MetaDescription = metaDescription;
             Slug = slug;
+            OwnershipStatus = ownershipStatus;
         }
 
-        public void Edit(string title, int headQ, int code, int oldCode, string authorizationCode, DateTime authorizationDate,
+        public void Edit(string title, int headQ, int code, int oldCode, string authorizationCode, DateTime authorizationDate, bool ownershipStatus,
             string telPreCode, string telephone, string fax, long postalCode, string address, string keywords, string metaDescription, string slug)
         {
             Title = title;
@@ -58,6 +60,7 @@ namespace BranchManagement.Domain.BranchAgg
             Keywords = keywords;
             MetaDescription = metaDescription;
             Slug = slug;
+            OwnershipStatus = ownershipStatus;
         }
 
         public void Activate()
