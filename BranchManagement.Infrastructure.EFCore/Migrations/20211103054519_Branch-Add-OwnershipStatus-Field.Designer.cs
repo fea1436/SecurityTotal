@@ -4,14 +4,16 @@ using BranchManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BranchManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(BranchContext))]
-    partial class BranchContextModelSnapshot : ModelSnapshot
+    [Migration("20211103054519_Branch-Add-OwnershipStatus-Field")]
+    partial class BranchAddOwnershipStatusField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

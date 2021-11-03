@@ -9,7 +9,7 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد شعبۀ جدید</a>
+            <a class="btn btn-success btn-lg"asp-page="./Create">ایجاد شعبۀ جدید</a>
         </p>
     </div>
 </div>
@@ -75,6 +75,7 @@
                                     <th>شناسۀ مجوز</th>
                                     <th>تاریخ مجوز</th>
                                     <th>شمارۀ تلفن</th>
+                                    <th>مالکیت</th>
                                     <th>آدرس</th>
                                 </tr>
                             </thead>
@@ -88,6 +89,7 @@
                                      <td>@item.AuthorizationCode</td>
                                      <td>@item.AuthorizationDate</td>
                                      <td>@item.FullTelNumber</td>
+                                     <td>@item.OwnershipStatusTitle</td>
                                      <td>@item.Address</td>
                                      <td>
 

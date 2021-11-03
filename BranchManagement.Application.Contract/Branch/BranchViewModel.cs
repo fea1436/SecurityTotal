@@ -12,5 +12,7 @@
         public string FullTelNumber { get; set; }
         public string Address { get; set; }
         public bool ActivationStatus { get; set; }
+        public bool OwnershipStatusCode { get; set; }
+        public string OwnershipStatusTitle { get; set; }
     }
 }

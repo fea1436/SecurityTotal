@@ -1,5 +1,4 @@
-﻿using System;
-using _01_Framework.Infrastructure;
+﻿using _01_Framework.Infrastructure;
 using BranchManagement.Application.Contract.Branch;
 using BranchManagement.Domain.BranchAgg;
 using System.Collections.Generic;
@@ -34,10 +33,10 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
                 Fax = x.Fax,
                 PostalCode = x.PostalCode,
                 Address = x.Address,
+                OwnershipStatus = x.OwnershipStatus,
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
                 Slug = x.Slug
-                
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -64,6 +63,7 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
                 AuthorizationDate = x.AuthorizationDate.ToFarsi(),
                 Address = x.Address,
                 ActivationStatus = x.ActivationStatus,
+                OwnershipStatusCode = x.OwnershipStatus,
                 FullTelNumber = x.TelPreCode + x.Telephone
             });
 
@@ -78,6 +78,7 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
 
             if (searchModel.ActivationStatus)
                 query = query.Where(x => !x.ActivationStatus);
+
 
             var branches = query.OrderBy(x => x.Code).ToList();
 

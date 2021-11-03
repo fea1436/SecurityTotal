@@ -13,6 +13,8 @@
   <ItemGroup>
     <Compile Include="Migrations\20211030080356_Branches_Creation.cs" />
     <Compile Include="Migrations\20211030080356_Branches_Creation.Designer.cs" />
+    <Compile Include="Migrations\20211103054519_Branch-Add-OwnershipStatus-Field.cs" />
+    <Compile Include="Migrations\20211103054519_Branch-Add-OwnershipStatus-Field.Designer.cs" />
     <Compile Include="Migrations\BranchContextModelSnapshot.cs" />
   </ItemGroup>
 

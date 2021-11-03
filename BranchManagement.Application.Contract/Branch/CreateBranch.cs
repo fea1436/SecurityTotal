@@ -15,6 +15,7 @@ namespace BranchManagement.Application.Contract.Branch
         public string Fax { get; set; }
         public long PostalCode { get; set; }
         public string Address { get; set; }
+        public bool OwnershipStatus { get; set; }
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public string Slug { get; set; }

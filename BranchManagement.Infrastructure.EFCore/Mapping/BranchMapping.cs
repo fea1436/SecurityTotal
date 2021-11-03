@@ -22,6 +22,7 @@ namespace BranchManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.Telephone).HasMaxLength(8).IsRequired();
             builder.Property(x => x.Fax).HasMaxLength(8).IsRequired();
             builder.Property(x => x.Address).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.OwnershipStatus).IsRequired();
             builder.Property(x => x.Keywords).HasMaxLength(80).IsRequired();
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
             builder.Property(x => x.Slug).HasMaxLength(500).IsRequired();

@@ -24,7 +24,7 @@ namespace BranchManagement.Application
                 return operation.Failed(ApplicationMessages.Duplicated);
 
             var branch = new Branch(command.Title, command.HeadQ, command.Code, command.OldCode,
-                command.AuthorizationCode, command.AuthorizationDate, command.TelPreCode, command.Telephone, command.Fax,
+                command.AuthorizationCode, command.AuthorizationDate, command.OwnershipStatus, command.TelPreCode, command.Telephone, command.Fax,
                 command.PostalCode, command.Address, command.Keywords, command.MetaDescription, command.Slug);
 
             _branchRepository.Create(branch);
@@ -46,7 +46,7 @@ namespace BranchManagement.Application
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             branch.Edit(command.Title, command.HeadQ, command.Code, command.OldCode, command.AuthorizationCode, command.AuthorizationDate,
-                command.TelPreCode, command.Telephone, command.Fax, command.PostalCode, command.Address, command.Keywords,
+                command.OwnershipStatus, command.TelPreCode, command.Telephone, command.Fax, command.PostalCode, command.Address, command.Keywords,
                 command.MetaDescription, command.Slug);
 
             _branchRepository.SaveChanges();
