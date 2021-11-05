@@ -85,6 +85,15 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
             foreach (var branch in branches)
             {
                 branch.HeadQ = headQ.FirstOrDefault(x => x.Code == branch.Code)?.Title;
+
+                if (branch.OwnershipStatusCode)
+                {
+                    branch.OwnershipStatusTitle = "ملکی";
+                }
+                else
+                {
+                    branch.OwnershipStatusTitle = "استیجاری";
+                }
             }
 
             return branches;
