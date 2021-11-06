@@ -77,49 +77,51 @@
                                     <th>شمارۀ تلفن</th>
                                     <th>مالکیت</th>
                                     <th>آدرس</th>
+                                    <th>عملیات</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.Branches)
-                                {<tr>
-                                     <td>@item.Id</td>
-                                     <td>@item.HeadQ</td>
-                                     <td>@item.Code</td>
-                                     <td>@item.OldCode</td>
-                                     <td>@item.AuthorizationCode</td>
-                                     <td>@item.AuthorizationDate</td>
-                                     <td>@item.FullTelNumber</td>
-                                     <td>@item.OwnershipStatusTitle</td>
-                                     <td>@item.Address</td>
-                                     <td>
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.HeadQ</td>
+                                        <td>@item.Code</td>
+                                        <td>@item.OldCode</td>
+                                        <td>@item.AuthorizationCode</td>
+                                        <td>@item.AuthorizationDate</td>
+                                        <td>@item.FullTelNumber</td>
+                                        <td>@item.OwnershipStatusTitle</td>
+                                        <td>@item.Address</td>
+                                        <td>
 
-                                         <a class="btn btn-warning  waves-effect waves-light m-b-5"
-                                            href="#showmodal=@Url.Page("./Index", "Edit", new {id = @item.Id})">
-                                             <i class="fa fa-edit"></i>  ویرایش
-                                         </a>
-                                         
-                                         @if (item.ActivationStatus)
-                                         {
-                                             <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id"
-                                                class="btn btn-danger waves-effect waves-light m-b-5">غیرفعال‌سازی</a>
-                                         }
-                                         else
-                                         {
-                                             <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id"
-                                                class="btn btn-success waves-effect waves-light m-b-5">فعال‌سازی</a>
-                                         }
+                                            <a class="btn btn-warning  waves-effect waves-light m-b-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new {id = @item.Id})">
+                                                <i class="fa fa-edit"></i>  ویرایش
+                                            </a>
+                                             
+                                            @if (item.ActivationStatus)
+                                            {
+                                                <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id"
+                                                   class="btn btn-danger waves-effect waves-light m-b-5">غیرفعال‌سازی</a>
+                                            }
+                                            else
+                                            {
+                                                <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id"
+                                                   class="btn btn-success waves-effect waves-light m-b-5">فعال‌سازی</a>
+                                            }
 
-                                     </td>
-                                 </tr>
+                                        </td>
+                                    </tr>
                                 }
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 @section Scripts {
 

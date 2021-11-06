@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" href="~/AdminTheme/assets/images/favicon_1.ico">
 
-    <title>پرتال جامع امور حفاظت و حراست | @ViewData["title"]</title>
+    <title>@ViewData["title"]</title>
 
     <!-- Base Css Files -->
     <link href="~/AdminTheme/assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,7 +25,6 @@
     <link href="~/AdminTheme/assets/css/waves-effect.css" rel="stylesheet">
 
     <!-- Data-Table -->
-    <link href="~/AdminTheme/assets/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="~/AdminTheme/assets/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
     <!-- sweet alerts -->
@@ -53,7 +52,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>امور حفاظت و حراست</span></a>
+                    <a asp-page="/Index" class="logo"><i class="md md-texture"></i> <span>امور حفاظت و حراست</span></a>
                 </div>
             </div>
             <!-- Button mobile view to collapse sidebar menu -->
@@ -193,8 +192,7 @@
 
 
 
-    @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
-    <script src="~/AdminTheme/assets/js/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
     <script src="~/AdminTheme/assets/js/waves.js"></script>
     <script src="~/AdminTheme/assets/js/wow.min.js"></script>

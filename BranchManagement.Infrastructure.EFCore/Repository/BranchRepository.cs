@@ -26,7 +26,7 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
                 Title = x.Title,
                 OldCode = x.OldCode,
                 AuthorizationCode = x.AuthorizationCode,
-                AuthorizationDate = x.AuthorizationDate,
+                AuthorizationDate = x.AuthorizationDate.ToFarsi(),
                 ActivationStatus = x.ActivationStatus,
                 TelPreCode = x.TelPreCode,
                 Telephone = x.Telephone,
