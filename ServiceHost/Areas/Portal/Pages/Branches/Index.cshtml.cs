@@ -12,6 +12,8 @@ namespace ServiceHost.Areas.Portal.Pages.Branches
 {
     public class IndexModel : PageModel
     {
+        [TempData] public string Message { get; set; }
+
         public BranchSearchModel SearchModel;
         public List<BranchViewModel> Branches;
         public SelectList BHeadQs;
@@ -56,6 +58,22 @@ namespace ServiceHost.Areas.Portal.Pages.Branches
         {
             var result = _branchApplication.Edit(command);
             return new JsonResult(result);
+        }
+
+        public IActionResult OnGetActivate(long id)
+        {
+            var result = _branchApplication.Activate(id);
+            Message = result.Message;
+
+            return RedirectToPage("./Index");
+        }
+
+        public IActionResult OnGetDeactivate(long id)
+        {
+            var result = _branchApplication.Deactivate(id);
+            Message = result.Message;
+
+            return RedirectToPage("./Index");
         }
     }
 }

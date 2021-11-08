@@ -25,7 +25,7 @@ namespace BranchManagement.Application
 
             var branch = new Branch(command.Title, command.HeadQ, command.Code, command.OldCode,
                 command.AuthorizationCode, command.AuthorizationDate.ToGeorgianDateTime(), command.OwnershipStatus, command.TelPreCode, command.Telephone, command.Fax,
-                command.PostalCode, command.Address, command.Keywords, command.MetaDescription, command.Slug);
+                command.PostalCode, command.Address, command.Keywords, command.MetaDescription, command.Title.Slugify());
 
             _branchRepository.Create(branch);
             _branchRepository.SaveChanges();
@@ -47,7 +47,7 @@ namespace BranchManagement.Application
 
             branch.Edit(command.Title, command.HeadQ, command.Code, command.OldCode, command.AuthorizationCode, command.AuthorizationDate.ToGeorgianDateTime(),
                 command.OwnershipStatus, command.TelPreCode, command.Telephone, command.Fax, command.PostalCode, command.Address, command.Keywords,
-                command.MetaDescription, command.Slug);
+                command.MetaDescription, command.Title.Slugify());
 
             _branchRepository.SaveChanges();
 

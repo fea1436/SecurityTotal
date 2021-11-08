@@ -95,7 +95,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label asp-for="Command.OwnershipStatus" class="control-label">نوع مالکیت</label>
+                                    <label asp-for="Command.OwnershipStatus" class="control-label">نوع مالکیت:</label>
                                     <select class="form-control" asp-for="Command.OwnershipStatus" asp-items='Model.Ownerships'>
                                         <option value="0">مالکیت ...</option>
                                     </select>
@@ -104,13 +104,22 @@
                             </div>
                         </div>
 
-
+                        @*<div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.Slug" class="control-label">متن لینک:</label>
+                                    <input id="Title" type="text" class="form-control" asp-for="Command.Slug">
+                                    <span asp-validation-for="Command.Slug" class="error"></span>
+                                </div>
+                            </div>
+                        </div>*@
+                        
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label asp-for="Command.Slug" class="control-label">اسلاگ</label>
-                                    <input id="Title" type="text" class="form-control" asp-for="Command.Slug">
-                                    <span asp-validation-for="Command.Slug" class="error"></span>
+                                    <label asp-for="Command.Address" class="control-label">آدرس:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Address">
+                                    <span asp-validation-for="Command.Address" class="error"></span>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +127,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label asp-for="Command.Keywords" class="control-label">کلمات کلیدی</label>
+                                    <label asp-for="Command.Keywords" class="control-label">کلمات کلیدی:</label>
                                     <input type="text" class="form-control" asp-for="Command.Keywords">
                                     <span asp-validation-for="Command.Keywords" class="error"></span>
                                 </div>
@@ -127,7 +136,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label asp-for="Command.MetaDescription" class="control-label">توضیحات متا</label>
+                                    <label asp-for="Command.MetaDescription" class="control-label">توضیحات:</label>
                                     <textarea class="form-control autogrow" asp-for="Command.MetaDescription"
                                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                                     <span asp-validation-for="Command.MetaDescription" class="error"></span>
