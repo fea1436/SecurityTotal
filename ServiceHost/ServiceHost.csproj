@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BranchManagement.Configuration\BranchManagement.Configuration.csproj" />
+    <ProjectReference Include="..\PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj" />
+    <ProjectReference Include="..\PersonnelManagement.Infrastructure.EFCore\PersonnelManagement.Infrastructure.EFCore.csproj" />
   </ItemGroup>
 
 </Project>

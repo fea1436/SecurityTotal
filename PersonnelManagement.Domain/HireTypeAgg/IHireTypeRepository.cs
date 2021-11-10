@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
-using BranchManagement.Application.Contract.Branch;
+using _01_Framework.Domain;
+using PersonnelManagement.ApplicationContract.HireType;
 
 namespace PersonnelManagement.Domain.HireTypeAgg
 {
-    public interface IHireTypeRepository
+    public interface IHireTypeRepository : IRepository<long, HireType>
     {
-        EditBranch GetDetails(long id);
-        List<BranchViewModel> GetAllHeadQ();
-        List<BranchViewModel> Search(BranchSearchModel searchModel);
+        EditHireType GetDetails(long id);
+        List<HireTypeViewModel> GetAllHireTypes();
+        List<HireTypeViewModel> Search(HireTypeSearchModel searchModel);
     }
 }

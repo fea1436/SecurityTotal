@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PersonnelManagement.Domain.HireTypeAgg;
 using PersonnelManagement.Domain.PersonnelAgg;
+using PersonnelManagement.Infrastructure.EFCore.Mapping;
 
 namespace PersonnelManagement.Infrastructure.EFCore
 {
@@ -16,8 +16,8 @@ namespace PersonnelManagement.Infrastructure.EFCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //var assembly = typeof().Assembly;
-            //modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+            var assembly = typeof(PersonnelMapping).Assembly;
+            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             base.OnModelCreating(modelBuilder);
         }
     }

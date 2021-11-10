@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BranchManagement.Application.Contract\BranchManagement.Application.Contract.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PersonnelManagement.ApplicationContract\PersonnelManagement.ApplicationContract.csproj" />
     <ProjectReference Include="..\_01_Framework\_01_Framework.csproj" />
   </ItemGroup>
 

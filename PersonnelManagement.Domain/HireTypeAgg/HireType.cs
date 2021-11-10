@@ -1,4 +1,6 @@
-﻿using _01_Framework.Domain;
+﻿using System.Collections.Generic;
+using _01_Framework.Domain;
+using PersonnelManagement.Domain.PersonnelAgg;
 
 namespace PersonnelManagement.Domain.HireTypeAgg
 {
@@ -6,6 +8,7 @@ namespace PersonnelManagement.Domain.HireTypeAgg
     {
         public string Title { get; private set; }
         public bool IsActive { get; private set; }
+        public List<Personnel> Personnel { get; private set; }
 
         public HireType(string title)
         {
