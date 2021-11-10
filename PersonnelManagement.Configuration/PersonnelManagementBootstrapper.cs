@@ -2,7 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using PersonnelManagement.Application;
 using PersonnelManagement.ApplicationContract.HireType;
+using PersonnelManagement.ApplicationContract.Personnel;
 using PersonnelManagement.Domain.HireTypeAgg;
+using PersonnelManagement.Domain.PersonnelAgg;
+using PersonnelManagement.Infrastructure.EFCore;
 using PersonnelManagement.Infrastructure.EFCore.Repository;
 
 namespace PersonnelManagement.Configuration
@@ -14,10 +17,10 @@ namespace PersonnelManagement.Configuration
             services.AddTransient<IHireTypeApplication, HireTypeApplication>();
             services.AddTransient<IHireTypeRepository, HireTypeRepository>();
 
-            //services.AddTransient<IPersonnelApplication, PersonnelApplication>();
-            //services.AddTransient<IPersonnelRepository, PersonnelRepository>();
+            services.AddTransient<IPersonnelApplication, PersonnelApplication>();
+            services.AddTransient<IPersonnelRepository, PersonnelRepository>();
 
-            //services.AddDbContext<BranchContext>(x => x.UseSqlServer(connectionString));
+            services.AddDbContext<PersonnelContext>(x => x.UseSqlServer(connectionString));
         }
     }
 }

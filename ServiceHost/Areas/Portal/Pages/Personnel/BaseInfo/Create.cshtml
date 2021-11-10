@@ -1,0 +1,155 @@
+﻿@page
+@model ServiceHost.Areas.Portal.Pages.Personnel.BaseInfo.CreateModel
+
+@{
+    Layout = "Shared/_AdminLayout";
+    ViewData["Title"] = "ایجاد شعبۀ جدید";
+}
+
+
+<div class="row" dir="rtl">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="page-title">ایجاد شعبۀ جدید</h3>
+            </div>
+            <div class="col-md-6">
+                <div class="panel-body">
+                    <form method="post" enctype="multipart/form-data">
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.Title" class="control-label">نام شعبه:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Title" onchange="makeSlug('Title', 'Slug')">
+                                    <span asp-validation-for="Command.Title" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.Code" class="control-label">کد مهرگستر:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Code" />
+                                    <span asp-validation-for="Command.Code" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.OldCode" class="control-label">کد سنتی:</label>
+                                    <input type="text" class="form-control" asp-for="Command.OldCode" />
+                                    <span asp-validation-for="Command.OldCode" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.AuthorizationCode" class="control-label">شناسۀ مجوز:</label>
+                                    <input type="text" class="form-control" asp-for="Command.AuthorizationCode" />
+                                    <span asp-validation-for="Command.AuthorizationCode" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.AuthorizationDate" class="control-label">تاریخ مجوز:</label>
+                                    <input class="form-control persianDateInput" asp-for="Command.AuthorizationDate" />
+                                    <span asp-validation-for="Command.AuthorizationDate" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label asp-for="Command.TelPreCode" class="control-label">پیش‌شماره:</label>
+                                    <input type="text" class="form-control" asp-for="Command.TelPreCode" />
+                                    <span asp-validation-for="Command.TelPreCode" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="Command.Telephone" class="control-label">تلفن:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Telephone" />
+                                    <span asp-validation-for="Command.Telephone" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="Command.Fax" class="control-label">دورنما:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Fax" />
+                                    <span asp-validation-for="Command.Fax" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.PostalCode" class="control-label">کدپستی:</label>
+                                    <input type="text" class="form-control" asp-for="Command.PostalCode" />
+                                    <span asp-validation-for="Command.PostalCode" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Command.OwnershipStatus" class="control-label">نوع مالکیت:</label>
+                                    <select class="form-control" asp-for="Command.OwnershipStatus" asp-items='Model.Ownerships'>
+                                        <option value="0">مالکیت ...</option>
+                                    </select>
+                                    <span asp-validation-for="Command.OwnershipStatus" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.Slug" class="control-label">متن لینک:</label>
+                                    <input id="Title" type="text" class="form-control" asp-for="Command.Slug">
+                                    <span asp-validation-for="Command.Slug" class="error"></span>
+                                </div>
+                            </div>
+                        </div>*@
+                        
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.Address" class="control-label">آدرس:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Address">
+                                    <span asp-validation-for="Command.Address" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.Keywords" class="control-label">کلمات کلیدی:</label>
+                                    <input type="text" class="form-control" asp-for="Command.Keywords">
+                                    <span asp-validation-for="Command.Keywords" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Command.MetaDescription" class="control-label">توضیحات:</label>
+                                    <textarea class="form-control autogrow" asp-for="Command.MetaDescription"
+                                              style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                    <span asp-validation-for="Command.MetaDescription" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+                        <a asp-page="./Index" class="btn btn-default waves-effect">بازگشت</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

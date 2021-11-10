@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using PersonnelManagement.Domain.PersonnelAgg;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PersonnelManagement.Domain.PersonnelAgg;
 
 namespace PersonnelManagement.Infrastructure.EFCore.Mapping
 {

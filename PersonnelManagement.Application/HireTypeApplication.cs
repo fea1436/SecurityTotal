@@ -18,7 +18,7 @@ namespace PersonnelManagement.Application
         {
             OperationResult operation = new OperationResult();
             if (_hireTypeRepository.Exists(x => x.Title == command.Title))
-                return operation.Failed(ApplicationMessages.Duplicated);
+                return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             var hireType = new HireType(command.Title);
             _hireTypeRepository.Create(hireType);
