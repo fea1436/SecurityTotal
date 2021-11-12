@@ -21,19 +21,32 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a asp-page="/Index" class="waves-effect active"><i class="md md-home"></i><span> داشبورد </span></a>
+                    <a asp-page="/Index" class="waves-effect active">
+                        <i class="md md-home"></i><span> داشبورد </span>
+                    </a>
                 </li>
 
                 <li>
-                    <a asp-page="/Branches/Index" class="waves-effect active"><i class="md md-home"></i><span> مدیریت و شعب </span></a>
+                    <a asp-page="/Branches/Index" class="waves-effect active">
+                        <i class="md md-home"></i><span> مدیریت و شعب </span>
+                    </a>
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> پرسنلی </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect">
+                        <i class="md md-home"></i>
+                        <span> پرسنلی </span><span class="pull-right"><i class="md md-add"></i></span>
+                    </a>
                     <ul class="list-unstyled">
-                        <li><a asp-page="/Personnel/BaseInfo/Index">اطلاعات کارکنان</a></li>
-                        <li><a asp-page="/Personnel/HireType/Index">وضعیت اشتغال</a></li>
-                        <li><a asp-page="/Personnel/Inquiry/Index">استعلام</a></li>
+                        <li>
+                            <a asp-page="/Personnel/BaseInfo/Index">اطلاعات کارکنان</a>
+                        </li>
+                        <li>
+                            <a asp-page="/Personnel/HireType/Index">وضعیت اشتغال</a>
+                        </li>
+                        <li>
+                            <a asp-page="/Personnel/Inquiry/Index">استعلام</a>
+                        </li>
                     </ul>
                 </li>
 
