@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using _01_Framework.Application;
+using BranchManagement.Application.Contract.OwnershipStatus;
 
 namespace BranchManagement.Application.Contract.Branch
 {
@@ -51,5 +53,7 @@ namespace BranchManagement.Application.Contract.Branch
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Slug { get; set; }
+
+        public List<OwnershipStatusViewModel> AllOwnershipStatusList { get; set; }
     }
 }

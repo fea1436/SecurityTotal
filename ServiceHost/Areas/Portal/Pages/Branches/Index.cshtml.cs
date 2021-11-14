@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using _01_Framework.Infrastructure;
 using BranchManagement.Application.Contract.Branch;
 using BranchManagement.Application.Contract.OwnershipStatus;
-using BranchManagement.Domain.OwnershipStatusAgg;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -39,7 +36,12 @@ namespace ServiceHost.Areas.Portal.Pages.Branches
 
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", new CreateBranch());
+            var branch = new CreateBranch
+            {
+                AllOwnershipStatusList = _ownershipStatusApplication.GetAllOwnershipStatus()
+            };
+
+            return Partial("./Create", branch);
         }
 
         public JsonResult OnPostCreate(CreateBranch command)
@@ -50,8 +52,8 @@ namespace ServiceHost.Areas.Portal.Pages.Branches
 
         public IActionResult OnGetEdit(long id)
         {
-            var articleCategory = _branchApplication.GetDetails(id);
-            return Partial("Edit", articleCategory);
+            var branch = _branchApplication.GetDetails(id);
+            return Partial("Edit", branch);
         }
 
         public JsonResult OnPostEdit(EditBranch command)
