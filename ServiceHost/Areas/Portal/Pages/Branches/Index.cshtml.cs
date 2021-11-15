@@ -53,7 +53,8 @@ namespace ServiceHost.Areas.Portal.Pages.Branches
         public IActionResult OnGetEdit(long id)
         {
             var branch = _branchApplication.GetDetails(id);
-            return Partial("Edit", branch);
+            branch.AllOwnershipStatusList = _ownershipStatusApplication.GetAllOwnershipStatus();
+            return Partial("./Edit", branch);
         }
 
         public JsonResult OnPostEdit(EditBranch command)

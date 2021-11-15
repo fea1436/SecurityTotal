@@ -2,6 +2,7 @@
 using BranchManagement.Application.Contract.Branch;
 using BranchManagement.Domain.BranchAgg;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using _01_Framework.Application;
 
@@ -26,7 +27,7 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
                 Title = x.Title,
                 OldCode = x.OldCode,
                 AuthorizationCode = x.AuthorizationCode,
-                AuthorizationDate = x.AuthorizationDate.ToFarsi(),
+                AuthorizationDate = x.AuthorizationDate.ToString(CultureInfo.InvariantCulture),
                 ActivationStatus = x.ActivationStatus,
                 TelPreCode = x.TelPreCode,
                 Telephone = x.Telephone,
@@ -70,14 +71,16 @@ namespace BranchManagement.Infrastructure.EFCore.Repository
             if (searchModel.Code > 0)
                 query = query.Where(x => x.Code == searchModel.Code);
 
-            if (searchModel.OldCode > 0)
-                query = query.Where(x => x.OldCode == searchModel.OldCode);
+            //if (searchModel.OldCode > 0)
+            //    query = query.Where(x => x.OldCode == searchModel.OldCode);
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
                 query = query.Where(x => x.Title.Contains(searchModel.Title));
 
             if (searchModel.ActivationStatus)
                 query = query.Where(x => !x.ActivationStatus);
+            else
+                query = query.Where(x => x.ActivationStatus);
 
 
             var branches = query.OrderBy(x => x.Code).ToList();
