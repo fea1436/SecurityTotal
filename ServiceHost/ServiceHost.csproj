@@ -16,10 +16,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BranchManagement.Configuration\BranchManagement.Configuration.csproj" />
+    <ProjectReference Include="..\BranchManagement.Presentation.Api\BranchManagement.Presentation.Api.csproj" />
     <ProjectReference Include="..\PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj" />
+    <ProjectReference Include="..\_02_SecTotalQuery\_02_SecTotalQuery.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Portal\Pages\Personnel\BaseInfo\" />
     <Folder Include="Areas\Portal\Pages\Personnel\Inquiry\" />
   </ItemGroup>
 

@@ -1,18 +1,14 @@
-using System.Text.Encodings.Web;
-using System.Text.Unicode;
-using _01_Framework.Application;
 using _02_SecTotalQuery.Contract.Branch;
 using _02_SecTotalQuery.Query;
+using BranchManagement.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BranchManagement.Configuration;
-using BranchManagement.Presentation.Api.Controllers;
-using PersonnelManagement.Configuration;
+using Microsoft.OpenApi.Models;
 
-namespace ServiceHost
+namespace BranchManagement.Presentation.Api
 {
     public class Startup
     {
@@ -26,19 +22,16 @@ namespace ServiceHost
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpContextAccessor();
-
-            BranchManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
-            PersonnelManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
-
-            services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
-            services.AddTransient<IFileUploader, FileUploader>();
-            services.AddTransient<IAuthHelper, AuthHelper>();
+            var connectionString = Configuration.GetConnectionString("SecurityTotalDatabase");
+            BranchManagementBootstrapper.Configure(services, connectionString);
             services.AddTransient<IBranchQuery, BranchQuery>();
+            
 
-
-            //AddApplicationPart adds ApiControllers
-            services.AddRazorPages().AddApplicationPart(typeof(BranchController).Assembly);
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BranchManagement.Presentation.Api", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,16 +40,11 @@ namespace ServiceHost
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BranchManagement.Presentation.Api v1"));
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -64,7 +52,6 @@ namespace ServiceHost
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });
         }

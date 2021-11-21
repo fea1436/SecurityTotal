@@ -1,4 +1,6 @@
-﻿using BranchManagement.Application;
+﻿using _02_SecTotalQuery.Contract.Branch;
+using _02_SecTotalQuery.Query;
+using BranchManagement.Application;
 using BranchManagement.Application.Contract.Branch;
 using BranchManagement.Application.Contract.OwnershipStatus;
 using BranchManagement.Domain.BranchAgg;
@@ -19,6 +21,9 @@ namespace BranchManagement.Configuration
 
             services.AddTransient<IOwnershipStatusApplication, OwnershipStatusApplication>();
             services.AddTransient<IOwnershipStatusRepository, OwnershipStatusRepository>();
+
+            services.AddTransient<IBranchQuery, BranchQuery>();
+
 
             services.AddDbContext<BranchContext>(x => x.UseSqlServer(connectionString));
         }

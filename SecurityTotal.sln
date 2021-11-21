@@ -33,15 +33,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PM.Domain", "PM.Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PM.Infrastructure", "PM.Infrastructure", "{3D0EF803-21E4-430D-91FC-274513C5509D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelManagement.Domain", "PersonnelManagement.Domain\PersonnelManagement.Domain.csproj", "{F87EE574-4D42-4B6F-81C9-4D09247FC819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Domain", "PersonnelManagement.Domain\PersonnelManagement.Domain.csproj", "{F87EE574-4D42-4B6F-81C9-4D09247FC819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelManagement.Application", "PersonnelManagement.Application\PersonnelManagement.Application.csproj", "{05D6EB19-2050-449A-9DDA-BA9407F9F067}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Application", "PersonnelManagement.Application\PersonnelManagement.Application.csproj", "{05D6EB19-2050-449A-9DDA-BA9407F9F067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelManagement.ApplicationContract", "PersonnelManagement.ApplicationContract\PersonnelManagement.ApplicationContract.csproj", "{0996A635-017F-404A-9FD2-20AD86D2BC40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.ApplicationContract", "PersonnelManagement.ApplicationContract\PersonnelManagement.ApplicationContract.csproj", "{0996A635-017F-404A-9FD2-20AD86D2BC40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelManagement.Configuration", "PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj", "{BFF173E5-AB24-4E58-A7F3-02139AE17E46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Configuration", "PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj", "{BFF173E5-AB24-4E58-A7F3-02139AE17E46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelManagement.Infrastructure.EFCore", "PersonnelManagement.Infrastructure.EFCore\PersonnelManagement.Infrastructure.EFCore.csproj", "{4C4589E1-036F-4F61-B31B-E074FEC4D466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Infrastructure.EFCore", "PersonnelManagement.Infrastructure.EFCore\PersonnelManagement.Infrastructure.EFCore.csproj", "{4C4589E1-036F-4F61-B31B-E074FEC4D466}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_02_SecTotalQuery", "_02_SecTotalQuery\_02_SecTotalQuery.csproj", "{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BM.Presentation", "BM.Presentation", "{5651DA7E-0D74-4DD6-A0F3-CCA1FB0D542A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BranchManagement.Presentation.Api", "BranchManagement.Presentation.Api\BranchManagement.Presentation.Api.csproj", "{DD03E1EA-6B20-4149-A043-068A44260D49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +103,14 @@ Global
 		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD03E1EA-6B20-4149-A043-068A44260D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD03E1EA-6B20-4149-A043-068A44260D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD03E1EA-6B20-4149-A043-068A44260D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD03E1EA-6B20-4149-A043-068A44260D49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +132,8 @@ Global
 		{0996A635-017F-404A-9FD2-20AD86D2BC40} = {576C947C-BDE7-4F7F-A75C-CCF6091CE93E}
 		{BFF173E5-AB24-4E58-A7F3-02139AE17E46} = {3D0EF803-21E4-430D-91FC-274513C5509D}
 		{4C4589E1-036F-4F61-B31B-E074FEC4D466} = {3D0EF803-21E4-430D-91FC-274513C5509D}
+		{5651DA7E-0D74-4DD6-A0F3-CCA1FB0D542A} = {0FE3CD55-9F66-4BF4-B066-0C22BF39982C}
+		{DD03E1EA-6B20-4149-A043-068A44260D49} = {5651DA7E-0D74-4DD6-A0F3-CCA1FB0D542A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F2FEE20-8F0A-4113-BC85-97D188F6393A}

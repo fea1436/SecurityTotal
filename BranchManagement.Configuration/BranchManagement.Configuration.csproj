@@ -12,6 +12,7 @@
     <ProjectReference Include="..\BranchManagement.Application.Contract\BranchManagement.Application.Contract.csproj" />
     <ProjectReference Include="..\BranchManagement.Application\BranchManagement.Application.csproj" />
     <ProjectReference Include="..\BranchManagement.Infrastructure.EFCore\BranchManagement.Infrastructure.EFCore.csproj" />
+    <ProjectReference Include="..\_02_SecTotalQuery\_02_SecTotalQuery.csproj" />
   </ItemGroup>
 
 </Project>
