@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
 
-namespace BranchManagement.Application.Contract.Branch
+namespace CoreManagement.Application.Contract.Branch
 {
     public interface IBranchApplication
     {

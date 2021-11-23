@@ -1,4 +1,4 @@
-﻿namespace BranchManagement.Domain.OwnershipStatusAgg
+﻿namespace CoreManagement.Domain.OwnershipStatusAgg
 {
     public class OwnershipStatus
     {

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using _01_Framework.Application;
-using BranchManagement.Application.Contract.OwnershipStatus;
+using CoreManagement.Application.Contract.OwnershipStatus;
 
-namespace BranchManagement.Application.Contract.Branch
+namespace CoreManagement.Application.Contract.Branch
 {
     public class CreateBranch
     {

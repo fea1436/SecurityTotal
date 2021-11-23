@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BranchManagement.Configuration\BranchManagement.Configuration.csproj" />
-    <ProjectReference Include="..\BranchManagement.Presentation.Api\BranchManagement.Presentation.Api.csproj" />
+    <ProjectReference Include="..\CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj" />
+    <ProjectReference Include="..\CoreManagement.Configuration\CoreManagement.Configuration.csproj" />
     <ProjectReference Include="..\PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj" />
     <ProjectReference Include="..\_02_SecTotalQuery\_02_SecTotalQuery.csproj" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BranchManagement.Application.Contract.OwnershipStatus
+namespace CoreManagement.Application.Contract.OwnershipStatus
 {
     public interface IOwnershipStatusApplication
     {

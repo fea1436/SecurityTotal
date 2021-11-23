@@ -23,7 +23,7 @@ namespace PersonnelManagement.Application
 
             var newPersonnel = new Personnel(command.PersonnelId, command.Name, command.Family, command.Ssid,
                 command.BirthDate, command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.HireTypeId);
+                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
 
             _personnelRepository.SaveChanges();
 
@@ -45,7 +45,7 @@ namespace PersonnelManagement.Application
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             personnel.Edit(command.PersonnelId, command.Name, command.Family, command.Ssid, command.BirthDate, command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.HireTypeId);
+                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
             _personnelRepository.SaveChanges();
 
             return operation.Succeeded();

@@ -8,8 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BranchManagement.Configuration;
-using BranchManagement.Presentation.Api.Controllers;
+using CoreManagement.Configuration;
 using PersonnelManagement.Configuration;
 
 namespace ServiceHost
@@ -28,7 +27,7 @@ namespace ServiceHost
         {
             services.AddHttpContextAccessor();
 
-            BranchManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
+            CoreManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
             PersonnelManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
@@ -36,9 +35,10 @@ namespace ServiceHost
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<IBranchQuery, BranchQuery>();
 
+            services.AddRazorPages();
 
             //AddApplicationPart adds ApiControllers
-            services.AddRazorPages().AddApplicationPart(typeof(BranchController).Assembly);
+            //services.AddRazorPages().AddApplicationPart(typeof(CoreController).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,7 @@
 ﻿using System;
 using _01_Framework.Domain;
 
-namespace BranchManagement.Domain.BranchAgg
+namespace CoreManagement.Domain.BranchAgg
 {
     public class Branch : EntityBase
     {

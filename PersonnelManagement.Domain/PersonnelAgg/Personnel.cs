@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _01_Framework.Domain;
 using PersonnelManagement.Domain.HireTypeAgg;
 
@@ -17,10 +18,11 @@ namespace PersonnelManagement.Domain.PersonnelAgg
         public string PictureTitle { get; private set; }
         public DateTime HireDate { get; private set; }
         public long HireTypeId { get; private set; }
+        public long Branch { get; private set; }
         public HireType HireType { get; private set; }
 
         public Personnel(long personnelId, string name, string family, string ssid, DateTime birthDate, string birthPlace,
-            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long hireTypeId)
+            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branch, long hireTypeId)
         {
             PersonnelId = personnelId;
             Name = name;
@@ -33,10 +35,11 @@ namespace PersonnelManagement.Domain.PersonnelAgg
             PictureTitle = pictureTitle;
             HireDate = hireDate;
             HireTypeId = hireTypeId;
+            Branch = branch;
         }
 
         public void Edit(long personnelId, string name, string family, string ssid, DateTime birthDate, string birthPlace,
-            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long hireTypeId)
+            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branch, long hireTypeId)
         {
             PersonnelId = personnelId;
             Name = name;
@@ -52,6 +55,7 @@ namespace PersonnelManagement.Domain.PersonnelAgg
             PictureTitle = pictureTitle;
             HireDate = hireDate;
             HireTypeId = hireTypeId;
+            Branch = branch;
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using BranchManagement.Application.Contract.OwnershipStatus;
-using BranchManagement.Domain.OwnershipStatusAgg;
+using CoreManagement.Application.Contract.OwnershipStatus;
+using CoreManagement.Domain.OwnershipStatusAgg;
 
-namespace BranchManagement.Infrastructure.EFCore.Repository
+namespace CoreManagement.Infrastructure.EFCore.Repository
 {
     public class OwnershipStatusRepository : IOwnershipStatusRepository
     {

@@ -10,5 +10,6 @@ namespace PersonnelManagement.ApplicationContract.Personnel
         public string Ssid { get; set; }
         public long HireTypeId { get; set; }
         public string HireDate { get; set; }
+        public string Branch { get; set; }
     }
 }

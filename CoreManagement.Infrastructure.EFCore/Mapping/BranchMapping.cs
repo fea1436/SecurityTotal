@@ -1,8 +1,8 @@
-﻿using BranchManagement.Domain.BranchAgg;
+﻿using CoreManagement.Domain.BranchAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BranchManagement.Infrastructure.EFCore.Mapping
+namespace CoreManagement.Infrastructure.EFCore.Mapping
 {
     public class BranchMapping : IEntityTypeConfiguration<Branch>
     {

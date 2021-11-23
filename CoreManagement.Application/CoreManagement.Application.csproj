@@ -5,12 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj" />
+    <ProjectReference Include="..\CoreManagement.Domain\CoreManagement.Domain.csproj" />
     <ProjectReference Include="..\_01_Framework\_01_Framework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Branch\" />
-    <Folder Include="OwnershipStatus\" />
   </ItemGroup>
 
 </Project>

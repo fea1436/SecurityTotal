@@ -15,5 +15,6 @@ namespace PersonnelManagement.ApplicationContract.Personnel
         public string PictureTitle { get; set; }
         public long HireTypeId { get; set; }
         public DateTime HireDate { get; set; }
+        public long Branch { get; set; }
     }
 }

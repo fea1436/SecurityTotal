@@ -63,6 +63,7 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
         {
             var hireType = _personnelContext.HireTypes.Select(x => new { x.Id, x.Title }).ToList();
 
+
             var query = _personnelContext.Personnel.Select(x => new PersonnelViewModel
             {
                 PersonnelId = x.PersonnelId,
@@ -99,6 +100,11 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
             {
                 singlePersonnel.HireTypeTitle = hireType.FirstOrDefault(x => x.Id == singlePersonnel.HireTypeId)?.Title;
             }
+
+            //foreach (var singlePersonnel in personnel)
+            //{
+            //    singlePersonnel.Branch = 
+            //}
 
             return personnel;
         }

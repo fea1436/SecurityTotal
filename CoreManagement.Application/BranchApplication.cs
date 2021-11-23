@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
-using BranchManagement.Application.Contract.Branch;
-using BranchManagement.Domain.BranchAgg;
+using CoreManagement.Application.Contract.Branch;
+using CoreManagement.Domain.BranchAgg;
 
-namespace BranchManagement.Application
+namespace CoreManagement.Application
 {
     public class BranchApplication : IBranchApplication
     {

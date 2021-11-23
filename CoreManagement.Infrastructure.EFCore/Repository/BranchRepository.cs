@@ -1,18 +1,19 @@
 ﻿using _01_Framework.Infrastructure;
-using BranchManagement.Application.Contract.Branch;
-using BranchManagement.Domain.BranchAgg;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using _01_Framework.Application;
+using CoreManagement.Application.Contract.Branch;
+using CoreManagement.Domain.BranchAgg;
+using CoreManagement.Infrastructure.EFCore;
 
-namespace BranchManagement.Infrastructure.EFCore.Repository
+namespace CoreManagement.Infrastructure.EFCore.Repository
 {
     public class BranchRepository : RepositoryBase<long, Branch>, IBranchRepository
     {
-        private readonly BranchContext _branchContext;
+        private readonly CoreContext _branchContext;
 
-        public BranchRepository(BranchContext context) : base(context)
+        public BranchRepository(CoreContext context) : base(context)
         {
             _branchContext = context;
         }

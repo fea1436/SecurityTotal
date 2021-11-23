@@ -1,4 +1,4 @@
-﻿namespace BranchManagement.Application.Contract.OwnershipStatus
+﻿namespace CoreManagement.Application.Contract.OwnershipStatus
 {
     public class OwnershipStatusViewModel
     {

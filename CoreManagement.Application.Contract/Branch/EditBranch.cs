@@ -1,4 +1,4 @@
-﻿namespace BranchManagement.Application.Contract.Branch
+﻿namespace CoreManagement.Application.Contract.Branch
 {
     public class EditBranch : CreateBranch
     {

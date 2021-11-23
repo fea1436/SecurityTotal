@@ -2,15 +2,15 @@
 using System.Linq;
 using _01_Framework.Application;
 using _02_SecTotalQuery.Contract.Branch;
-using BranchManagement.Infrastructure.EFCore;
+using CoreManagement.Infrastructure.EFCore;
 
 namespace _02_SecTotalQuery.Query
 {
     public class BranchQuery : IBranchQuery
     {
-        private readonly BranchContext _branchContext;
+        private readonly CoreContext _branchContext;
 
-        public BranchQuery(BranchContext branchContext)
+        public BranchQuery(CoreContext branchContext)
         {
             _branchContext = branchContext;
         }

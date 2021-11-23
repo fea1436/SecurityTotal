@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using BranchManagement.Application.Contract.Branch;
-using BranchManagement.Application.Contract.OwnershipStatus;
+using CoreManagement.Application.Contract.Branch;
+using CoreManagement.Application.Contract.OwnershipStatus;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;

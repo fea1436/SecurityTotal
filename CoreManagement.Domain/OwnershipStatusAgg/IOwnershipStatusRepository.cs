@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using BranchManagement.Application.Contract.OwnershipStatus;
+using CoreManagement.Application.Contract.OwnershipStatus;
 
-namespace BranchManagement.Domain.OwnershipStatusAgg
+namespace CoreManagement.Domain.OwnershipStatusAgg
 {
     public interface IOwnershipStatusRepository
     {
