@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using CoreManagement.Application.Contract.HireType;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PersonnelManagement.ApplicationContract.HireType;
 
 namespace ServiceHost.Areas.Portal.Pages.Personnel.HireType
 {

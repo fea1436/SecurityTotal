@@ -2,25 +2,23 @@
 using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using PersonnelManagement.ApplicationContract.Personnel;
-using PersonnelManagement.Domain.HireTypeAgg;
-using PersonnelManagement.Domain.PersonnelAgg;
+using CoreManagement.Application.Contract.Personnel;
+using CoreManagement.Domain.PersonnelAgg;
 
-namespace PersonnelManagement.Infrastructure.EFCore.Repository
+namespace CoreManagement.Infrastructure.EFCore.Repository
 {
     public class PersonnelRepository : RepositoryBase<long, Personnel>, IPersonnelRepository
     {
-        private readonly PersonnelContext _personnelContext;
+        private readonly CoreContext _coreContext;
 
-        public PersonnelRepository(PersonnelContext context) : base(context)
+        public PersonnelRepository(CoreContext context) : base(context)
         {
-            _personnelContext = context;
+            _coreContext = context;
         }
 
         public EditPersonnel GetDetails(long id)
         {
-            return _personnelContext.Personnel.Select(x => new EditPersonnel
+            return _coreContext.Personnel.Select(x => new EditPersonnel
             {
                 PersonnelId = x.PersonnelId,
                 Name = x.Name,
@@ -38,9 +36,9 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
 
         public List<PersonnelViewModel> GetAllPersonnel()
         {
-            var hireType = _personnelContext.HireTypes.Select(x => new {x.Id, x.Title}).ToList();
+            var hireType = _coreContext.HireTypes.Select(x => new {x.Id, x.Title}).ToList();
 
-            var personnel =  _personnelContext.Personnel.Select(x => new PersonnelViewModel
+            var personnel =  _coreContext.Personnel.Select(x => new PersonnelViewModel
             {
                 PersonnelId = x.PersonnelId,
                 Name = x.Name,
@@ -61,10 +59,10 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
 
         public List<PersonnelViewModel> Search(PersonnelSearchModel searchModel)
         {
-            var hireType = _personnelContext.HireTypes.Select(x => new { x.Id, x.Title }).ToList();
+            var hireType = _coreContext.HireTypes.Select(x => new { x.Id, x.Title }).ToList();
 
 
-            var query = _personnelContext.Personnel.Select(x => new PersonnelViewModel
+            var query = _coreContext.Personnel.Select(x => new PersonnelViewModel
             {
                 PersonnelId = x.PersonnelId,
                 Name = x.Name,

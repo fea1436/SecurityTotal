@@ -1,31 +1,31 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
-using PersonnelManagement.ApplicationContract.Personnel;
-using PersonnelManagement.Domain.PersonnelAgg;
+using CoreManagement.Application.Contract.Personnel;
+using CoreManagement.Domain.PersonnelAgg;
 
-namespace PersonnelManagement.Application
+namespace CoreManagement.Application
 {
     public class PersonnelApplication : IPersonnelApplication
     {
-        private readonly IPersonnelRepository _personnelRepository;
+        private readonly IPersonnelRepository _coreRepository;
 
-        public PersonnelApplication(IPersonnelRepository personnelRepository)
+        public PersonnelApplication(IPersonnelRepository coreRepository)
         {
-            _personnelRepository = personnelRepository;
+            _coreRepository = coreRepository;
         }
 
         public OperationResult Add(CreatePersonnel command)
         {
             OperationResult operation = new OperationResult();
-            if ((_personnelRepository.Exists(x => x.PersonnelId == command.PersonnelId)) ||
-                (_personnelRepository.Exists(x => x.Ssid == command.Ssid)))
+            if ((_coreRepository.Exists(x => x.PersonnelId == command.PersonnelId)) ||
+                (_coreRepository.Exists(x => x.Ssid == command.Ssid)))
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             var newPersonnel = new Personnel(command.PersonnelId, command.Name, command.Family, command.Ssid,
                 command.BirthDate, command.BirthPlace,
                 command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
 
-            _personnelRepository.SaveChanges();
+            _coreRepository.SaveChanges();
 
             return operation.Succeeded();
         }
@@ -34,36 +34,36 @@ namespace PersonnelManagement.Application
         {
             OperationResult operation = new OperationResult();
 
-            var personnel = _personnelRepository.Get(command.Id);
+            var personnel = _coreRepository.Get(command.Id);
 
             if (personnel == null)
                 return operation.Failed(ApplicationMessages.NotFound);
 
-            if ((_personnelRepository.Exists(x=>(x.Ssid == command.Ssid && x.Id !=  command.Id))) ||
-                (_personnelRepository.Exists(x => (x.PersonnelId == command.PersonnelId && x.Id != command.Id))) ||
-                (_personnelRepository.Exists(x => (x.Ssid == command.Ssid && x.PersonnelId == command.PersonnelId && x.Id != command.Id))))
+            if ((_coreRepository.Exists(x=>(x.Ssid == command.Ssid && x.Id !=  command.Id))) ||
+                (_coreRepository.Exists(x => (x.PersonnelId == command.PersonnelId && x.Id != command.Id))) ||
+                (_coreRepository.Exists(x => (x.Ssid == command.Ssid && x.PersonnelId == command.PersonnelId && x.Id != command.Id))))
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             personnel.Edit(command.PersonnelId, command.Name, command.Family, command.Ssid, command.BirthDate, command.BirthPlace,
                 command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
-            _personnelRepository.SaveChanges();
+            _coreRepository.SaveChanges();
 
             return operation.Succeeded();
         }
 
         public EditPersonnel GetDetails(long id)
         {
-            return _personnelRepository.GetDetails(id);
+            return _coreRepository.GetDetails(id);
         }
 
         public List<PersonnelViewModel> GetAllPersonnel()
         {
-            return _personnelRepository.GetAllPersonnel();
+            return _coreRepository.GetAllPersonnel();
         }
 
         public List<PersonnelViewModel> Search(PersonnelSearchModel searchModel)
         {
-            return _personnelRepository.Search(searchModel);
+            return _coreRepository.Search(searchModel);
         }
     }
 }

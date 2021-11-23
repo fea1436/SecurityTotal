@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonnelManagement.ApplicationContract\PersonnelManagement.ApplicationContract.csproj" />
-    <ProjectReference Include="..\PersonnelManagement.Domain\PersonnelManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

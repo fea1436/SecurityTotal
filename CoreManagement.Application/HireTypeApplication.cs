@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
-using PersonnelManagement.ApplicationContract.HireType;
-using PersonnelManagement.Domain.HireTypeAgg;
+using CoreManagement.Application.Contract.HireType;
+using CoreManagement.Domain.HireTypeAgg;
 
-namespace PersonnelManagement.Application
+namespace CoreManagement.Application
 {
     public class HireTypeApplication : IHireTypeApplication
     {

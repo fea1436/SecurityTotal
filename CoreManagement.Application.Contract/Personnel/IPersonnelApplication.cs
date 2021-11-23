@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
 
-namespace PersonnelManagement.ApplicationContract.Personnel
+namespace CoreManagement.Application.Contract.Personnel
 {
     public interface IPersonnelApplication
     {

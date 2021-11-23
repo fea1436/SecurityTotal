@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersonnelManagement.Domain\PersonnelManagement.Domain.csproj" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
 
 </Project>

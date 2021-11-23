@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
 
-namespace PersonnelManagement.ApplicationContract.HireType
+namespace CoreManagement.Application.Contract.HireType
 {
     public interface IHireTypeApplication
     {

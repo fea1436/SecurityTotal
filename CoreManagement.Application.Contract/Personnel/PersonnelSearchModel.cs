@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PersonnelManagement.ApplicationContract.Personnel
+﻿namespace CoreManagement.Application.Contract.Personnel
 {
     public class PersonnelSearchModel
     {

@@ -1,8 +1,8 @@
-﻿using PersonnelManagement.Domain.HireTypeAgg;
+﻿using CoreManagement.Domain.HireTypeAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace PersonnelManagement.Infrastructure.EFCore.Mapping
+namespace CoreManagement.Infrastructure.EFCore.Mapping
 {
     public class HireTypeMapping : IEntityTypeConfiguration<HireType>
     {

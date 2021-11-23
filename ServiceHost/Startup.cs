@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CoreManagement.Configuration;
-using PersonnelManagement.Configuration;
 
 namespace ServiceHost
 {
@@ -28,7 +27,6 @@ namespace ServiceHost
             services.AddHttpContextAccessor();
 
             CoreManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
-            PersonnelManagementBootstrapper.Configure(services, Configuration.GetConnectionString("SecurityTotalDatabase"));
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddTransient<IFileUploader, FileUploader>();

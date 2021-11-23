@@ -2,23 +2,23 @@
 using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Infrastructure;
-using PersonnelManagement.ApplicationContract.HireType;
-using PersonnelManagement.Domain.HireTypeAgg;
+using CoreManagement.Application.Contract.HireType;
+using CoreManagement.Domain.HireTypeAgg;
 
-namespace PersonnelManagement.Infrastructure.EFCore.Repository
+namespace CoreManagement.Infrastructure.EFCore.Repository
 {
     public class HireTypeRepository : RepositoryBase<long, HireType>, IHireTypeRepository
     {
-        private readonly PersonnelContext _personnelContext;
+        private readonly CoreContext _coreContext;
 
-        public HireTypeRepository(PersonnelContext context) : base(context)
+        public HireTypeRepository(CoreContext context) : base(context)
         {
-            _personnelContext = context;
+            _coreContext = context;
         }
 
         public EditHireType GetDetails(long id)
         {
-            return _personnelContext.HireTypes.Select(x => new EditHireType
+            return _coreContext.HireTypes.Select(x => new EditHireType
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -28,7 +28,7 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
 
         public List<HireTypeViewModel> GetAllHireTypes()
         {
-            return _personnelContext.HireTypes.Select(x => new HireTypeViewModel
+            return _coreContext.HireTypes.Select(x => new HireTypeViewModel
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -40,7 +40,7 @@ namespace PersonnelManagement.Infrastructure.EFCore.Repository
 
         public List<HireTypeViewModel> Search(HireTypeSearchModel searchModel)
         {
-            var query = _personnelContext.HireTypes.Select(x => new HireTypeViewModel
+            var query = _coreContext.HireTypes.Select(x => new HireTypeViewModel
             {
                 Id = x.Id,
                 Title = x.Title,

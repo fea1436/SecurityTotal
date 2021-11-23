@@ -1,4 +1,4 @@
-﻿namespace PersonnelManagement.ApplicationContract.HireType
+﻿namespace CoreManagement.Application.Contract.HireType
 {
     public class HireTypeViewModel
     {

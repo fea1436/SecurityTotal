@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using _01_Framework.Domain;
-using PersonnelManagement.Domain.HireTypeAgg;
+using CoreManagement.Domain.HireTypeAgg;
 
-namespace PersonnelManagement.Domain.PersonnelAgg
+namespace CoreManagement.Domain.PersonnelAgg
 {
     public class Personnel : EntityBase
     {

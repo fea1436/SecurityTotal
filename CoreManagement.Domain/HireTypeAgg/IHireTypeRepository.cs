@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Domain;
-using PersonnelManagement.ApplicationContract.HireType;
+using CoreManagement.Application.Contract.HireType;
 
-namespace PersonnelManagement.Domain.HireTypeAgg
+namespace CoreManagement.Domain.HireTypeAgg
 {
     public interface IHireTypeRepository : IRepository<long, HireType>
     {

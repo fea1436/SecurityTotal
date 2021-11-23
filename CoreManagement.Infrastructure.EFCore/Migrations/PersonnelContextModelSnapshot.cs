@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PersonnelManagement.Infrastructure.EFCore;
+using CoreManagement.Infrastructure.EFCore;
 
-namespace PersonnelManagement.Infrastructure.EFCore.Migrations
+namespace CoreManagement.Infrastructure.EFCore.Migrations
 {
-    [DbContext(typeof(PersonnelContext))]
-    [Migration("20211110113022_Personnel_and_HireType_Tables")]
-    partial class Personnel_and_HireType_Tables
+    [DbContext(typeof(CoreContext))]
+    partial class CoreContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

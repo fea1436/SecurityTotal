@@ -7,24 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_01_Framework", "_01_Framew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersonnelManagement", "PersonnelManagement", "{E68B2A5D-B5BC-4FD9-8CBA-9D2388A7ED7E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PM.Application", "PM.Application", "{576C947C-BDE7-4F7F-A75C-CCF6091CE93E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PM.Domain", "PM.Domain", "{6008C6CE-1830-40BD-B6E4-297845FE3BDE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PM.Infrastructure", "PM.Infrastructure", "{3D0EF803-21E4-430D-91FC-274513C5509D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Domain", "PersonnelManagement.Domain\PersonnelManagement.Domain.csproj", "{F87EE574-4D42-4B6F-81C9-4D09247FC819}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Application", "PersonnelManagement.Application\PersonnelManagement.Application.csproj", "{05D6EB19-2050-449A-9DDA-BA9407F9F067}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.ApplicationContract", "PersonnelManagement.ApplicationContract\PersonnelManagement.ApplicationContract.csproj", "{0996A635-017F-404A-9FD2-20AD86D2BC40}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Configuration", "PersonnelManagement.Configuration\PersonnelManagement.Configuration.csproj", "{BFF173E5-AB24-4E58-A7F3-02139AE17E46}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonnelManagement.Infrastructure.EFCore", "PersonnelManagement.Infrastructure.EFCore\PersonnelManagement.Infrastructure.EFCore.csproj", "{4C4589E1-036F-4F61-B31B-E074FEC4D466}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_02_SecTotalQuery", "_02_SecTotalQuery\_02_SecTotalQuery.csproj", "{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreManagement", "CoreManagement", "{B5B9D748-CEC5-4007-A258-08FC69ECAD7A}"
@@ -35,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CM.Domain", "CM.Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CM.Infrastructure", "CM.Infrastructure", "{44A481B4-96A1-4163-A4E4-838E485AA96B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreManagement.Application", "CoreManagement.Application\CoreManagement.Application.csproj", "{EC332A48-B337-4B51-BBF2-5DA679797D3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreManagement.Application", "CoreManagement.Application\CoreManagement.Application.csproj", "{EC332A48-B337-4B51-BBF2-5DA679797D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreManagement.Application.Contract", "CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj", "{23DF8069-CAEB-4692-A673-1BDAA284DE60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreManagement.Application.Contract", "CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj", "{23DF8069-CAEB-4692-A673-1BDAA284DE60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreManagement.Domain", "CoreManagement.Domain\CoreManagement.Domain.csproj", "{8281BC57-9FE6-4879-8F3F-D5642B3B93B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreManagement.Domain", "CoreManagement.Domain\CoreManagement.Domain.csproj", "{8281BC57-9FE6-4879-8F3F-D5642B3B93B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreManagement.Configuration", "CoreManagement.Configuration\CoreManagement.Configuration.csproj", "{0D613D4B-D26A-4316-8077-51CEE36834C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreManagement.Configuration", "CoreManagement.Configuration\CoreManagement.Configuration.csproj", "{0D613D4B-D26A-4316-8077-51CEE36834C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreManagement.Infrastructure.EFCore", "CoreManagement.Infrastructure.EFCore\CoreManagement.Infrastructure.EFCore.csproj", "{0FB0CDA4-5005-400E-9141-AB025B2AA3AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreManagement.Infrastructure.EFCore", "CoreManagement.Infrastructure.EFCore\CoreManagement.Infrastructure.EFCore.csproj", "{0FB0CDA4-5005-400E-9141-AB025B2AA3AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,26 +41,6 @@ Global
 		{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D7F7DDC-9C72-40D1-80E1-409CE29C85EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F87EE574-4D42-4B6F-81C9-4D09247FC819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F87EE574-4D42-4B6F-81C9-4D09247FC819}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F87EE574-4D42-4B6F-81C9-4D09247FC819}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F87EE574-4D42-4B6F-81C9-4D09247FC819}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05D6EB19-2050-449A-9DDA-BA9407F9F067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05D6EB19-2050-449A-9DDA-BA9407F9F067}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05D6EB19-2050-449A-9DDA-BA9407F9F067}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05D6EB19-2050-449A-9DDA-BA9407F9F067}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0996A635-017F-404A-9FD2-20AD86D2BC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0996A635-017F-404A-9FD2-20AD86D2BC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0996A635-017F-404A-9FD2-20AD86D2BC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0996A635-017F-404A-9FD2-20AD86D2BC40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFF173E5-AB24-4E58-A7F3-02139AE17E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFF173E5-AB24-4E58-A7F3-02139AE17E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFF173E5-AB24-4E58-A7F3-02139AE17E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFF173E5-AB24-4E58-A7F3-02139AE17E46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C4589E1-036F-4F61-B31B-E074FEC4D466}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99FAFEF8-A88A-4F3B-9DDC-3A27354EC690}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -108,14 +70,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{576C947C-BDE7-4F7F-A75C-CCF6091CE93E} = {E68B2A5D-B5BC-4FD9-8CBA-9D2388A7ED7E}
-		{6008C6CE-1830-40BD-B6E4-297845FE3BDE} = {E68B2A5D-B5BC-4FD9-8CBA-9D2388A7ED7E}
-		{3D0EF803-21E4-430D-91FC-274513C5509D} = {E68B2A5D-B5BC-4FD9-8CBA-9D2388A7ED7E}
-		{F87EE574-4D42-4B6F-81C9-4D09247FC819} = {6008C6CE-1830-40BD-B6E4-297845FE3BDE}
-		{05D6EB19-2050-449A-9DDA-BA9407F9F067} = {576C947C-BDE7-4F7F-A75C-CCF6091CE93E}
-		{0996A635-017F-404A-9FD2-20AD86D2BC40} = {576C947C-BDE7-4F7F-A75C-CCF6091CE93E}
-		{BFF173E5-AB24-4E58-A7F3-02139AE17E46} = {3D0EF803-21E4-430D-91FC-274513C5509D}
-		{4C4589E1-036F-4F61-B31B-E074FEC4D466} = {3D0EF803-21E4-430D-91FC-274513C5509D}
 		{3B4B1B32-E5D7-40CA-9177-A2E9DDBE9935} = {B5B9D748-CEC5-4007-A258-08FC69ECAD7A}
 		{8A77B1FE-1729-4AB8-80D5-F538D07C28C8} = {B5B9D748-CEC5-4007-A258-08FC69ECAD7A}
 		{44A481B4-96A1-4163-A4E4-838E485AA96B} = {B5B9D748-CEC5-4007-A258-08FC69ECAD7A}
