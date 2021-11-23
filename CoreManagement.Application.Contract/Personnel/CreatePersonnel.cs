@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using CoreManagement.Application.Contract.Branch;
+using CoreManagement.Application.Contract.HireType;
 
 namespace CoreManagement.Application.Contract.Personnel
 {
@@ -16,5 +19,7 @@ namespace CoreManagement.Application.Contract.Personnel
         public long HireTypeId { get; set; }
         public DateTime HireDate { get; set; }
         public long Branch { get; set; }
+        public List<HireTypeViewModel> AllHireTypeList { get; set; }
+        public List<BranchViewModel> AllBranchList { get; set; }
     }
 }
