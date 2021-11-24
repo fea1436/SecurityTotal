@@ -1,5 +1,4 @@
-﻿using System;
-using _02_SecTotalQuery.Contract.Branch;
+﻿using _02_SecTotalQuery.Contract.Branch;
 using _02_SecTotalQuery.Query;
 using CoreManagement.Application;
 using CoreManagement.Application.Contract.Branch;

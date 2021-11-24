@@ -7,8 +7,6 @@ namespace ServiceHost.Areas.Portal.Pages.Personnel.HireType
 {
     public class IndexModel : PageModel
     {
-        [TempData] public string Message { get; set; }
-
         public HireTypeSearchModel SearchModel;
         public List<HireTypeViewModel> HireTypes;
 

@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Portal\Pages\Personnel\BaseInfo\**" />
+    <Compile Remove="Areas\Portal\Pages\Personnel\Inquiry\**" />
+    <Content Remove="Areas\Portal\Pages\Personnel\BaseInfo\**" />
+    <Content Remove="Areas\Portal\Pages\Personnel\Inquiry\**" />
+    <EmbeddedResource Remove="Areas\Portal\Pages\Personnel\BaseInfo\**" />
+    <EmbeddedResource Remove="Areas\Portal\Pages\Personnel\Inquiry\**" />
+    <None Remove="Areas\Portal\Pages\Personnel\BaseInfo\**" />
+    <None Remove="Areas\Portal\Pages\Personnel\Inquiry\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
@@ -18,11 +29,6 @@
     <ProjectReference Include="..\CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj" />
     <ProjectReference Include="..\CoreManagement.Configuration\CoreManagement.Configuration.csproj" />
     <ProjectReference Include="..\_02_SecTotalQuery\_02_SecTotalQuery.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Portal\Pages\Personnel\BaseInfo\" />
-    <Folder Include="Areas\Portal\Pages\Personnel\Inquiry\" />
   </ItemGroup>
 
 </Project>

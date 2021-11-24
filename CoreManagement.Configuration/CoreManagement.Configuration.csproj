@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreManagement.Application.Contract\CoreManagement.Application.Contract.csproj" />
     <ProjectReference Include="..\CoreManagement.Application\CoreManagement.Application.csproj" />
+    <ProjectReference Include="..\CoreManagement.Infrastructure.EFCore\CoreManagement.Infrastructure.EFCore.csproj" />
     <ProjectReference Include="..\_02_SecTotalQuery\_02_SecTotalQuery.csproj" />
   </ItemGroup>
 
