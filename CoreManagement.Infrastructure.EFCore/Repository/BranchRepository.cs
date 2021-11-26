@@ -50,6 +50,23 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
             }).OrderBy(x => x.Title).ToList();
         }
 
+        public List<BranchViewModel> GetAllBranches()
+        {
+            return _branchContext.Branches.Select(x => new BranchViewModel
+            {
+                Id = x.Id,
+                Code = x.Code,
+                Title = x.Title,
+                OldCode = x.OldCode,
+                AuthorizationCode = x.AuthorizationCode,
+                AuthorizationDate = x.AuthorizationDate.ToFarsi(),
+                Address = x.Address,
+                ActivationStatus = x.ActivationStatus,
+                OwnershipStatusCode = x.OwnershipStatus,
+                FullTelNumber = x.TelPreCode + x.Telephone
+            }).ToList();
+        }
+
         public List<BranchViewModel> Search(BranchSearchModel searchModel)
         {
             var headQ = _branchContext.Branches.Select(x => new { x.Code, x.Title }).ToList();

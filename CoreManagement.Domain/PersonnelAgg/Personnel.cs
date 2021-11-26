@@ -1,5 +1,6 @@
 ﻿using System;
 using _01_Framework.Domain;
+using CoreManagement.Domain.BranchAgg;
 using CoreManagement.Domain.HireTypeAgg;
 
 namespace CoreManagement.Domain.PersonnelAgg
@@ -17,11 +18,13 @@ namespace CoreManagement.Domain.PersonnelAgg
         public string PictureTitle { get; private set; }
         public DateTime HireDate { get; private set; }
         public long HireTypeId { get; private set; }
-        public long Branch { get; private set; }
+        public long BranchId { get; private set; }
+        public Branch Branch { get; private set; }
         public HireType HireType { get; private set; }
 
+
         public Personnel(long personnelId, string name, string family, string ssid, DateTime birthDate, string birthPlace,
-            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branch, long hireTypeId)
+            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branchId, long hireTypeId)
         {
             PersonnelId = personnelId;
             Name = name;
@@ -34,11 +37,11 @@ namespace CoreManagement.Domain.PersonnelAgg
             PictureTitle = pictureTitle;
             HireDate = hireDate;
             HireTypeId = hireTypeId;
-            Branch = branch;
+            BranchId = branchId;
         }
 
         public void Edit(long personnelId, string name, string family, string ssid, DateTime birthDate, string birthPlace,
-            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branch, long hireTypeId)
+            string picture, string pictureAlt, string pictureTitle, DateTime hireDate, long branchId, long hireTypeId)
         {
             PersonnelId = personnelId;
             Name = name;
@@ -54,7 +57,7 @@ namespace CoreManagement.Domain.PersonnelAgg
             PictureTitle = pictureTitle;
             HireDate = hireDate;
             HireTypeId = hireTypeId;
-            Branch = branch;
+            BranchId = branchId;
         }
     }
 }

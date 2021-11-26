@@ -94,6 +94,11 @@ namespace CoreManagement.Application
             return _branchRepository.GetAllHeadQ();
         }
 
+        public List<BranchViewModel> GetAllBranches()
+        {
+            return _branchRepository.GetAllBranches();
+        }
+
         public List<BranchViewModel> Search(BranchSearchModel searchModel)
         {
             return _branchRepository.Search(searchModel);

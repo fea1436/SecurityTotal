@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Infrastructure;
@@ -24,10 +25,11 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 Name = x.Name,
                 Family = x.Family,
                 Ssid = x.Ssid,
-                BirthDate = x.BirthDate,
+                BirthDate = x.BirthDate.ToString(CultureInfo.InvariantCulture),
                 BirthPlace = x.BirthPlace,
-                HireDate = x.HireDate,
+                HireDate = x.HireDate.ToString(CultureInfo.InvariantCulture),
                 HireTypeId = x.HireTypeId,
+                BranchId = x.BranchId,
                 Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle
@@ -38,6 +40,8 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
         {
             var hireType = _coreContext.HireTypes.Select(x => new { x.Id, x.Title }).ToList();
 
+            var branches = _coreContext.Branches.Select(x => new { x.Id, x.Title }).ToList();
+
             var personnel = _coreContext.Personnel.Select(x => new PersonnelViewModel
             {
                 PersonnelId = x.PersonnelId,
@@ -46,12 +50,18 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 BirthDate = x.BirthDate,
                 Ssid = x.Ssid,
                 HireDate = x.HireDate,
-                HireTypeId = x.HireTypeId
+                HireTypeId = x.HireTypeId,
+                BranchId = x.BranchId,
             }).OrderBy(x => x.PersonnelId).ToList();
 
             foreach (var singlePersonnel in personnel)
             {
                 singlePersonnel.HireTypeTitle = hireType.FirstOrDefault(x => x.Id == singlePersonnel.HireTypeId)?.Title;
+            }
+
+            foreach (var singlePersonnel in personnel)
+            {
+                singlePersonnel.BranchTitle = branches.FirstOrDefault(x => x.Id == singlePersonnel.BranchId)?.Title;
             }
 
             return personnel;
@@ -60,6 +70,8 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
         public List<PersonnelViewModel> Search(PersonnelSearchModel searchModel)
         {
             var hireType = _coreContext.HireTypes.Select(x => new { x.Id, x.Title }).ToList();
+
+            var branches = _coreContext.Branches.Select(x => new { x.Id, x.Title }).ToList();
 
 
             var query = _coreContext.Personnel.Select(x => new PersonnelViewModel
@@ -99,10 +111,10 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 singlePersonnel.HireTypeTitle = hireType.FirstOrDefault(x => x.Id == singlePersonnel.HireTypeId)?.Title;
             }
 
-            //foreach (var singlePersonnel in personnel)
-            //{
-            //    singlePersonnel.Branch = 
-            //}
+            foreach (var singlePersonnel in personnel)
+            {
+                singlePersonnel.BranchTitle = branches.FirstOrDefault(x => x.Id == singlePersonnel.BranchId)?.Title;
+            }
 
             return personnel;
         }

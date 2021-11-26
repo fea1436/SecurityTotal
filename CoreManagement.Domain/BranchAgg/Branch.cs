@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using _01_Framework.Domain;
+using CoreManagement.Domain.PersonnelAgg;
 
 namespace CoreManagement.Domain.BranchAgg
 {
@@ -21,6 +23,7 @@ namespace CoreManagement.Domain.BranchAgg
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
+        public List<Personnel> Personnel { get; private set; }
 
         public Branch(string title, int headQ, int code, int oldCode, string authorizationCode, DateTime authorizationDate, bool ownershipStatus,
             string telPreCode, string telephone, string fax, long postalCode, string address, string keywords, string metaDescription, string slug)

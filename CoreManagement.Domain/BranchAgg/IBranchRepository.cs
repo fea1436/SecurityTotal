@@ -8,6 +8,7 @@ namespace CoreManagement.Domain.BranchAgg
     {
         EditBranch GetDetails(long id);
         List<BranchViewModel> GetAllHeadQ();
+        List<BranchViewModel> GetAllBranches();
         List<BranchViewModel> Search(BranchSearchModel searchModel);
     }
 }

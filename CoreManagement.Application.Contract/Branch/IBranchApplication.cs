@@ -11,6 +11,7 @@ namespace CoreManagement.Application.Contract.Branch
         OperationResult Deactivate(long id);
         EditBranch GetDetails(long id);
         List<BranchViewModel> GetAllHeadQ();
+        List<BranchViewModel> GetAllBranches();
         List<BranchViewModel> Search(BranchSearchModel searchModel);
     }
 }

@@ -18,10 +18,15 @@ namespace CoreManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.PictureAlt).HasMaxLength(500).IsRequired();
             builder.Property(x => x.PictureTitle).HasMaxLength(500).IsRequired();
             builder.Property(x => x.HireTypeId).IsRequired();
+            builder.Property(x => x.BranchId).IsRequired();
 
             builder.HasOne(x => x.HireType)
                 .WithMany(x => x.Personnel)
                 .HasForeignKey(x => x.HireTypeId);
+
+            builder.HasOne(x => x.Branch)
+                .WithMany(x => x.Personnel)
+                .HasForeignKey(x => x.BranchId);
         }
     }
 }

@@ -1,0 +1,118 @@
+﻿@model CoreManagement.Application.Contract.Personnel.CreatePersonnel
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">تعریف پرسنل جدید</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Create"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PersonnelId" class="control-label">کدپرسنلی:</label>
+                    <input type="text" class="form-control" asp-for="PersonnelId" />
+                    <span asp-validation-for="PersonnelId" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="HireDate" class="control-label">تاریخ استخدام:</label>
+                    <input class="form-control persianDateInput" asp-for="HireDate" />
+                    <span asp-validation-for="HireDate" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">نام:</label>
+                    <input type="text" class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Family" class="control-label">نام‌خانوادگی:</label>
+                    <input type="text" class="form-control" asp-for="Family" />
+                    <span asp-validation-for="Family" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="BranchId" class="control-label">شعبۀ محل خدمت</label>
+                    <select class="form-control" asp-for="BranchId" asp-items='new SelectList(Model.AllBranchList, "Id", "Title")'>
+                        <option value="0">انتخاب شعبه ...</option>
+                    </select>
+                    <span asp-validation-for="BranchId" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="BirthDate" class="control-label">تاریخ تولد:</label>
+                    <input class="form-control persianDateInput" asp-for="BirthDate" />
+                    <span asp-validation-for="BirthDate" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="BirthPlace" class="control-label">محل تولد:</label>
+                    <input type="text" class="form-control" asp-for="BirthPlace" />
+                    <span asp-validation-for="BirthPlace" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="HireTypeId" class="control-label">وضعیت اشتغال</label>
+                    <select class="form-control" asp-for="HireTypeId" asp-items='new SelectList(Model.AllHireTypeList, "Id", "Title")'>
+                        <option value="0">انتخاب وضعیت اشتغال ...</option>
+                    </select>
+                    <span asp-validation-for="HireTypeId" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Picture" class="control-label">تصویر پرسنل</label>
+                    <input type="file" class="form-control" asp-for="Picture" accept="image/*">
+                    <span asp-validation-for="Picture" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PictureAlt" class="control-label">متن جایگزین تصویر</label>
+                    @*<input type="text" class="form-control" asp-for="PictureAlt" onchange="fillField('ShortDescription', 'MetaDescription')">*@
+                    <input type="text" class="form-control" asp-for="PictureAlt">
+                    <span asp-validation-for="PictureAlt" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PictureTitle" class="control-label">عنوان تصویر</label>
+                    <input type="text" class="form-control" asp-for="PictureTitle">
+                    <span asp-validation-for="PictureTitle" class="error"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-info waves-effect waves-light">تعریف</button>
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+    </div>
+</form>

@@ -22,8 +22,8 @@ namespace CoreManagement.Application
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
             var newPersonnel = new Personnel(command.PersonnelId, command.Name, command.Family, command.Ssid,
-                command.BirthDate, command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
+                command.BirthDate.ToGeorgianDateTime(), command.BirthPlace,
+                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
 
             _coreRepository.SaveChanges();
 
@@ -44,8 +44,8 @@ namespace CoreManagement.Application
                 (_coreRepository.Exists(x => (x.Ssid == command.Ssid && x.PersonnelId == command.PersonnelId && x.Id != command.Id))))
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
-            personnel.Edit(command.PersonnelId, command.Name, command.Family, command.Ssid, command.BirthDate, command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate, command.Branch, command.HireTypeId);
+            personnel.Edit(command.PersonnelId, command.Name, command.Family, command.Ssid, command.BirthDate.ToGeorgianDateTime(), command.BirthPlace,
+                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
             _coreRepository.SaveChanges();
 
             return operation.Succeeded();
