@@ -7,11 +7,13 @@ namespace CoreManagement.Application
 {
     public class PersonnelApplication : IPersonnelApplication
     {
+        private readonly IFileUploader _fileUploader;
         private readonly IPersonnelRepository _coreRepository;
 
-        public PersonnelApplication(IPersonnelRepository coreRepository)
+        public PersonnelApplication(IPersonnelRepository coreRepository, IFileUploader fileUploader)
         {
             _coreRepository = coreRepository;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Add(CreatePersonnel command)
@@ -21,10 +23,14 @@ namespace CoreManagement.Application
                 (_coreRepository.Exists(x => x.Ssid == command.Ssid)))
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
+            var picturePath = $"PersonnelImg";
+            var pictureFileName = _fileUploader.Upload(command.Picture, picturePath);
+
             var newPersonnel = new Personnel(command.PersonnelId, command.Name, command.Family, command.Ssid,
                 command.BirthDate.ToGeorgianDateTime(), command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
+                pictureFileName, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
 
+            _coreRepository.Create(newPersonnel);
             _coreRepository.SaveChanges();
 
             return operation.Succeeded();
@@ -39,13 +45,17 @@ namespace CoreManagement.Application
             if (personnel == null)
                 return operation.Failed(ApplicationMessages.NotFound);
 
-            if ((_coreRepository.Exists(x=>(x.Ssid == command.Ssid && x.Id !=  command.Id))) ||
+            if ((_coreRepository.Exists(x => (x.Ssid == command.Ssid && x.Id != command.Id))) ||
                 (_coreRepository.Exists(x => (x.PersonnelId == command.PersonnelId && x.Id != command.Id))) ||
                 (_coreRepository.Exists(x => (x.Ssid == command.Ssid && x.PersonnelId == command.PersonnelId && x.Id != command.Id))))
                 return operation.Failed(ApplicationMessages.WouldBeDuplicated);
 
+            var picturePath = $"PersonnelImg";
+            var pictureFileName = _fileUploader.Upload(command.Picture, picturePath);
+
             personnel.Edit(command.PersonnelId, command.Name, command.Family, command.Ssid, command.BirthDate.ToGeorgianDateTime(), command.BirthPlace,
-                command.Picture, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
+                pictureFileName, command.PictureAlt, command.PictureTitle, command.HireDate.ToGeorgianDateTime(), command.BranchId, command.HireTypeId);
+
             _coreRepository.SaveChanges();
 
             return operation.Succeeded();

@@ -17,7 +17,7 @@ namespace CoreManagement.Application.Contract.Branch
         [Range(1111, 9999, ErrorMessage = ValidationMessages.NotInRange)]
         public int Code { get; set; }
 
-        [Range(11111, 99999, ErrorMessage = ValidationMessages.NotInRange)]
+        [Range(1111, 99999, ErrorMessage = ValidationMessages.NotInRange)]
         public int OldCode { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

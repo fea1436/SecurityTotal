@@ -30,7 +30,7 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 HireDate = x.HireDate.ToString(CultureInfo.InvariantCulture),
                 HireTypeId = x.HireTypeId,
                 BranchId = x.BranchId,
-                Picture = x.Picture,
+                //Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle
             }).FirstOrDefault(x => x.Id == id);
