@@ -43,7 +43,7 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
 
         public List<BranchViewModel> GetAllHeadQ()
         {
-            return _branchContext.Branches.Where(x => x.HeadQ == 0).Select(x => new BranchViewModel
+            return _branchContext.Branches.Where(x => x.HeadQ == 1234568).Select(x => new BranchViewModel
             {
                 Code = x.Code,
                 Title = x.Title
@@ -75,6 +75,7 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Code = x.Code,
+                HeadQCode = x.HeadQ,
                 Title = x.Title,
                 OldCode = x.OldCode,
                 AuthorizationCode = x.AuthorizationCode,
@@ -85,11 +86,13 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 FullTelNumber = x.TelPreCode + x.Telephone
             });
 
-            if (searchModel.Code > 0)
+            if (searchModel.HeadQ != 0)
+                query = query.Where(x => x.HeadQCode == searchModel.HeadQ);
+
+            if (searchModel.Code != 0)
                 query = query.Where(x => x.Code == searchModel.Code);
 
-            //if (searchModel.OldCode > 0)
-            //    query = query.Where(x => x.OldCode == searchModel.OldCode);
+            
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
                 query = query.Where(x => x.Title.Contains(searchModel.Title));
@@ -100,11 +103,11 @@ namespace CoreManagement.Infrastructure.EFCore.Repository
                 query = query.Where(x => x.ActivationStatus);
 
 
-            var branches = query.OrderBy(x => x.Code).ToList();
+            var branches = query.OrderBy(x => x.Title).ToList();
 
             foreach (var branch in branches)
             {
-                branch.HeadQ = headQ.FirstOrDefault(x => x.Code == branch.Code)?.Title;
+                branch.HeadQTitle = headQ.FirstOrDefault(x => x.Code == branch.HeadQCode)?.Title;
 
                 if (branch.OwnershipStatusCode)
                 {

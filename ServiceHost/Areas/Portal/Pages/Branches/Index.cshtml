@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Code"></label>
-                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد مهرگستر" />
+                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد مهرگستر" value="0" />
                     </div>
                     <div class="form-group m-r-10">
                         <div class="checkbox checkbox-primary">
@@ -66,6 +66,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>مدیریت</th>
+                                    <th>عنوان</th>
                                     <th>کدمهرگستر</th>
                                     <th>کدسنتی</th>
                                     <th>شناسۀ مجوز</th>
@@ -81,7 +82,8 @@
                                 {
                                     <tr>
                                         <td>@item.Id</td>
-                                        <td>@item.HeadQ</td>
+                                        <td>@item.HeadQTitle</td>
+                                        <td>@item.Title</td>
                                         <td>@item.Code</td>
                                         <td>@item.OldCode</td>
                                         <td>@item.AuthorizationCode</td>

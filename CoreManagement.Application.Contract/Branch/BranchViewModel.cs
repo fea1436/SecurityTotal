@@ -4,7 +4,8 @@
     {
         public long Id { get; set; }
         public string Title { get; set; }
-        public string HeadQ { get; set; }
+        public int HeadQCode { get; set; }
+        public string HeadQTitle { get; set; }
         public int Code { get; set; }
         public int OldCode { get; set; }
         public string AuthorizationCode { get; set; }
